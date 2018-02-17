@@ -1,1 +1,6 @@
 theme: jekyll-theme-time-machine
+plugins:
+        - jekyll-seo-tag
+
+title: Izly Protocol Documentation
+
