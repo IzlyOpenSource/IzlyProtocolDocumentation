@@ -3,4 +3,6 @@ plugins:
         - jekyll-seo-tag
 
 title: Izly Protocol Documentation
+lang: fr_FR
+description: Documentation du protocole utilisé par Izly, pour permettre la création d'un client libre (open source), sans tracking publicitaire ni géolocalisation.
 
