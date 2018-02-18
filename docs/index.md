@@ -38,7 +38,7 @@ Cette section explique le principe general de l'authentification, et uniquement 
 
 L'authentification suit un processus différent, selon que c'est la première fois qu'on s'authentifie, ou bien qu'on rafraichit une session expirée.
 
-Etapes de la premiere authentification:
+**Etapes de la premiere authentification:**
 
 Etape 0) Le compteur est initialise a 0
 
@@ -66,10 +66,11 @@ Etape 4) Réponse (du Serveur vers le Client) à l'invocation SOAP, contenant:
 
 Etape 5) Incrémentation du compteur
 
+---
 
 Si la session expire, alors on peut utiliser une version simplifiee de l'authentification pour la "rafraichir", sans avoir besoin de renvoyer un SMS.
 
-Etapes de l'authentification simplifiee:
+**Etapes de l'authentification simplifiee:**
 
 Etape 0) la valeur du compteur n'est pas remise a 0
 
@@ -205,13 +206,18 @@ Arguments (tous de type "string"):
 La valeur de l'OTP est calculée comme suit à partir du code d'activation et du compteur:
 
 Soit A = la chaine de caractères ASCII contenant le code d'activation reçu par SMS.
+
 Soit B = Base64Decode(A). Par exemple si A est la chaine ASCII `"MTIzNDU2"`, alors B est la chaine ASCII `"123456"`
+
 Soit C = la séquence de 8 octets représentant la valeur du Compteur sur 64 bits, en big-endian.
+
 Soit D = La signature HMAC-SHA1 du message C, signé avec la clé B.
 
 La valeur de l'OTP est la signature D encodé en Base64, dans laquelle:
  - Le caractère `/` est remplacé par `_`
  - Le caractère `+` est remplacé par `-`
+
+Ce calcul est fait par la fonction `izly_auth()` dans `freezly.py`
 
 Après cette requête, le Compteur est incrémenté.
 
@@ -286,11 +292,14 @@ La valeur de l'argument "print" est calculée comme suit:
 
 Soit A = la chaine ASCII \<numero de telephone\> . "," . \<session id\> . "," . \<id carte\> . "," . \<montant\> . "," . \<OTP\>
 (dans cette chaine, l'OTP est la valeur directe de l'OTP, non-préfixée par le mot de passe)
+
 Soit B = La signature HMAC-SHA1 de la chaine A, avec l'OTP utilisé comme clé.
 
 La valeur de l'argument "print" est la signature B encodé en Base64, dans laquelle:
  - Le caractère `/` est remplacé par `_`
  - Le caractère `+` est remplacé par `-`
+
+Ce calcul est fait par la fonction `izly_pay()` dans `freezly.py`
 
 La valeur du Compteur est incrémentée après cette requête.
 
