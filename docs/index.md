@@ -20,7 +20,7 @@ La section suivante donne les grandes lignes du fonctionnement de l'authentifica
 
 D'abord la sous-section suivante donnera une liste et description des valeurs impliquées dans les processus d'authentification. Le fonctionnement exact de l'authentification et l'utilisation de ces valeurs sera expliqué ensuite.
 
-#### I.a Elements utilisés dans l'authentification
+#### I.a Elements utilisés dans l'authentification
 
 Ces differents elements interviennent dans l'authentification :
 
@@ -219,7 +219,7 @@ En cas de succès, la réponse contient plusieurs infos, dont les plus utiles so
 - Le SessionID, contenu dans le noeud XML sous le chemin: /Logon/SID
 - Le token, contenu dans le noeud XML sous le chemin: /Logon/OAUTH/ACCESS\_TOKEN
 
-#### III.c Authentification simplifiée (rafraichissement de session expirée)
+#### III.c Authentification simplifiée (rafraichissement de session expirée)
 
 Méthode SOAP invoquée: Login
 
