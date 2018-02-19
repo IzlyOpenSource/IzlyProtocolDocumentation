@@ -1,11 +1,11 @@
-Le protocole Izly
-=================
+Documentation du protocole Izly
+===============================
 
 Ce document décrit le protocole permettant la communication entre l'application smartphone Izly (client), et les serveurs Izly. Ces informations ont été obtenues via le sniffing du protocole sous Android, et sont donc potentiellement incompletes, inexactes, etc. 
 
 Toutefois, elles suffisent normalement à effectuer les opérations courantes (s'identifier sur le service, rechargher son compte, etc.)
 
-Ce document (incluant le code d'exemple ̀`freezly.py`) est diffusé sous la licence "DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE" (aka WTFPL, disponible sur <http://sam.zoy.org/wtfpl/COPYING>), dans l'espoir de contribuer au développement d'un client libre, sans pubs ni tracking...
+Ce document (incluant le code d'exemple ̀`freezly.py`) est diffusé sous la licence "DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE" (aka WTFPL, disponible sur <http://sam.zoy.org/wtfpl/COPYING>), dans l'espoir de contribuer au développement d'un client libre, sans tracking publicitaire ni géolocalisation.
 
 Vue d'ensemble
 --------------
